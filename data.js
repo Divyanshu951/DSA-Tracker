@@ -1,7 +1,16 @@
 // --- DATA ---
 // (Using the same data structure you provided)
 
+/**Editing Status
+ * COMPLETED: L1, L2, L3, L4, L5, L6
+ *
+ * STARTED BUT NOT COMPLETED:
+ *
+ *
+ */
+
 const level1 = {
+  completed: true,
   title: "Level 1: Fundamental Knowledge",
   id: "basics",
   icon: "fa-laptop-code",
@@ -18,25 +27,24 @@ const level1 = {
           items: [
             {
               name: "Basic Input/Output (Cin/Cout, Print, Scanner)",
-              link: "#",
             },
-            { name: "Data Types (int, float, char, boolean, etc.)", link: "#" },
+            { name: "Data Types (int, float, char, boolean, etc.)" },
           ],
         },
         {
           name: "Control Flow",
           items: [
-            { name: "Conditional Statements (If-Else, Switch)", link: "#" },
-            { name: "Nested If-Else Logic", link: "#" },
+            { name: "Conditional Statements (If-Else, Switch)" },
+            { name: "Nested If-Else Logic" },
           ],
         },
         {
           name: "Loops (Iterations)",
           items: [
-            { name: "For Loops", link: "#" },
-            { name: "While Loops", link: "#" },
-            { name: "Do-While Loops", link: "#" },
-            { name: "Break and Continue statements", link: "#" },
+            { name: "For Loops" },
+            { name: "While Loops" },
+            { name: "Do-While Loops" },
+            { name: "Break and Continue statements" },
           ],
         },
       ],
@@ -50,16 +58,16 @@ const level1 = {
         {
           name: "Functions",
           items: [
-            { name: "Function Declaration & Definition", link: "#" },
-            { name: "Pass by Value", link: "#" },
-            { name: "Pass by Reference", link: "#" },
+            { name: "Function Declaration & Definition" },
+            { name: "Pass by Value" },
+            { name: "Pass by Reference" },
           ],
         },
         {
           name: "Basic Collections",
           items: [
-            { name: "Arrays (1D & Multi-dimensional)", link: "#" },
-            { name: "Strings & Basic Manipulation", link: "#" },
+            { name: "Arrays (1D & Multi-dimensional)" },
+            { name: "Strings & Basic Manipulation" },
           ],
         },
       ],
@@ -75,12 +83,30 @@ const level1 = {
           badge:
             "bg-pink-100 text-pink-700 dark:bg-pink-900/30 dark:text-pink-300",
           items: [
-            { name: "Rectangular Star Pattern", link: "#" },
-            { name: "Triangular Star Pattern", link: "#" },
-            { name: "Inverted Triangle Pattern", link: "#" },
-            { name: "Pyramid Pattern", link: "#" },
-            { name: "Diamond Pattern", link: "#" },
-            { name: "Number Patterns", link: "#" },
+            {
+              name: "Rectangular Star Pattern",
+              link: "https://takeuforward.org/strivers-a2z-dsa-course/must-do-pattern-problems-before-starting-dsa/",
+            },
+            {
+              name: "Triangular Star Pattern",
+              link: "https://takeuforward.org/strivers-a2z-dsa-course/must-do-pattern-problems-before-starting-dsa/",
+            },
+            {
+              name: "Inverted Triangle Pattern",
+              link: "https://takeuforward.org/strivers-a2z-dsa-course/must-do-pattern-problems-before-starting-dsa/",
+            },
+            {
+              name: "Pyramid Pattern",
+              link: "https://takeuforward.org/strivers-a2z-dsa-course/must-do-pattern-problems-before-starting-dsa/",
+            },
+            {
+              name: "Diamond Pattern",
+              link: "https://takeuforward.org/strivers-a2z-dsa-course/must-do-pattern-problems-before-starting-dsa/",
+            },
+            {
+              name: "Number Patterns",
+              link: "https://takeuforward.org/strivers-a2z-dsa-course/must-do-pattern-problems-before-starting-dsa/",
+            },
           ],
         },
       ],
@@ -89,6 +115,7 @@ const level1 = {
 };
 
 const level2 = {
+  completed: true,
   title: "Level 2: Time & Space Complexity",
   id: "time_complexity",
   icon: "fa-clock",
@@ -101,20 +128,42 @@ const level2 = {
       bgColor: "bg-blue-50 dark:bg-blue-900/10",
       groups: [
         {
+          name: "Resources",
+          items: [
+            {
+              name: "Sanketh Singh ⭐⭐⭐⭐⭐",
+              link: "https://www.youtube.com/watch?v=mV3wrLBbuuE&t=387s",
+            },
+            {
+              name: "Kunal Kushwaha ⭐⭐⭐⭐",
+              link: "https://www.youtube.com/playlist?list=PLm4khKImW62GFfKmUcTSHUQkL_Pbuc3Q0",
+            },
+            {
+              name: "geeksforgeeks ⭐⭐⭐",
+              link: "https://www.geeksforgeeks.org/dsa/practice-questions-time-complexity-analysis/",
+            },
+            {
+              name: "codechef ⭐⭐⭐",
+              link: "https://www.codechef.com/learn/course/time-complexity",
+            },
+            { name: "Best is to use AI to test knowledge ⭐♾️" },
+          ],
+        },
+        {
           name: "Asymptotic Notation",
           items: [
-            { name: "What is Time Complexity?", link: "#" },
-            { name: "Big O Notation (Upper Bound)", link: "#" },
-            { name: "Omega Notation (Lower Bound)", link: "#" },
-            { name: "Theta Notation (Tight Bound)", link: "#" },
+            { name: "What is Time Complexity?" },
+            { name: "Big O Notation (Upper Bound)" },
+            { name: "Omega Notation (Lower Bound)" },
+            { name: "Theta Notation (Tight Bound)" },
           ],
         },
         {
           name: "Complexity Cases",
           items: [
-            { name: "Best Case Analysis", link: "#" },
-            { name: "Average Case Analysis", link: "#" },
-            { name: "Worst Case Analysis", link: "#" },
+            { name: "Best Case Analysis" },
+            { name: "Average Case Analysis" },
+            { name: "Worst Case Analysis" },
           ],
         },
       ],
@@ -128,19 +177,19 @@ const level2 = {
         {
           name: "How to Calculate",
           items: [
-            { name: "Counting Iterations in Loops", link: "#" },
-            { name: "Analyzing Nested Loops (O(N^2))", link: "#" },
-            { name: "Logarithmic Complexity (O(log N))", link: "#" },
-            { name: "Space Complexity (Auxiliary vs Total)", link: "#" },
+            { name: "Counting Iterations in Loops" },
+            { name: "Analyzing Nested Loops (O(N^2))" },
+            { name: "Logarithmic Complexity (O(log N))" },
+            { name: "Space Complexity (Auxiliary vs Total)" },
           ],
         },
         {
           name: "Common Orders of Growth",
           items: [
-            { name: "Constant Time O(1)", link: "#" },
-            { name: "Linear Time O(N)", link: "#" },
-            { name: "Quadratic Time O(N^2)", link: "#" },
-            { name: "Exponential Time O(2^N)", link: "#" },
+            { name: "Constant Time O(1)" },
+            { name: "Linear Time O(N)" },
+            { name: "Quadratic Time O(N^2)" },
+            { name: "Exponential Time O(2^N)" },
           ],
         },
       ],
@@ -156,10 +205,10 @@ const level2 = {
           badge:
             "bg-indigo-100 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-300",
           items: [
-            { name: "Calculate complexity of simple loop", link: "#" },
-            { name: "Calculate complexity of nested loop", link: "#" },
-            { name: "Find complexity of recursive code (Basic)", link: "#" },
-            { name: "Compare two algorithms for same problem", link: "#" },
+            { name: "Calculate complexity of simple loop" },
+            { name: "Calculate complexity of nested loop" },
+            { name: "Find complexity of recursive code (Basic)" },
+            { name: "Compare two algorithms for same problem" },
           ],
         },
       ],
@@ -168,6 +217,7 @@ const level2 = {
 };
 
 const level3 = {
+  completed: true,
   title: "Level 3: Array Problems",
   id: "arrays",
   icon: "fa-layer-group", // Added Icon
@@ -182,10 +232,9 @@ const level3 = {
         {
           name: "Introduction",
           items: [
-            { name: "What is an array?", link: "#" },
+            { name: "What is an array?" },
             {
               name: "Basic characteristics: contiguous memory, fixed size, indexed elements",
-              link: "#",
             },
           ],
         },
@@ -194,11 +243,9 @@ const level3 = {
           items: [
             {
               name: "Syntax for declaring arrays in various programming languages",
-              link: "#",
             },
             {
               name: "Initializing arrays with default or specific values",
-              link: "#",
             },
           ],
         },
@@ -207,11 +254,9 @@ const level3 = {
           items: [
             {
               name: "Indexing: accessing elements using their position",
-              link: "#",
             },
             {
               name: "Address calculation for element access",
-              link: "#",
             },
           ],
         },
@@ -220,7 +265,6 @@ const level3 = {
           items: [
             {
               name: "Basic operations like insertion, deletion, updating",
-              link: "#",
             },
             { name: "Swapping elements", link: "#" },
           ],
@@ -231,7 +275,6 @@ const level3 = {
             { name: "Understanding 2D arrays (matrices)", link: "#" },
             {
               name: "Accessing elements in multi-dimensional arrays",
-              link: "#",
             },
           ],
         },
@@ -241,11 +284,9 @@ const level3 = {
             { name: "Reversing an array", link: "#" },
             {
               name: "Finding the maximum or minimum element",
-              link: "#",
             },
             {
               name: "Finding the sum or average of elements",
-              link: "#",
             },
           ],
         },
@@ -255,7 +296,6 @@ const level3 = {
             { name: "Iterating through all elements", link: "#" },
             {
               name: "Different approaches (e.g., for loop, while loop)",
-              link: "#",
             },
           ],
         },
@@ -264,11 +304,9 @@ const level3 = {
           items: [
             {
               name: "Creating subarrays from existing arrays",
-              link: "#",
             },
             {
               name: "Understanding slicing for specific ranges",
-              link: "#",
             },
           ],
         },
@@ -282,55 +320,101 @@ const level3 = {
       groups: [
         {
           name: "Easy",
-          badge:
-            "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300",
+          badge: "text-green-700 dark:text-green-300",
           items: [
-            { name: "Find largest element in an array", link: "#" },
-            { name: "Second largest element in an array", link: "#" },
+            {
+              name: "Find largest element in an array",
+              link: "https://www.naukri.com/code360/problems/largest-element-in-the-array-largest-element-in-the-array_5026279",
+            },
+            {
+              name: "Second largest element in an array",
+              link: "https://www.naukri.com/code360/problems/second-largest-element-in-the-array_873375",
+            },
             {
               name: "Count the frequency of an element in an array",
-              link: "#",
+              link: "https://www.geeksforgeeks.org/dsa/counting-frequencies-of-array-elements/",
             },
             {
               name: "Find the minimum (or maximum) element of an array",
-              link: "#",
+              link: "https://www.geeksforgeeks.org/problems/find-minimum-and-maximum-element-in-an-array4428/1",
             },
-            { name: "Rotate an array by K", link: "#" },
-            { name: "2 sum", link: "#" },
-            { name: "Longest subarray with sum", link: "#" },
+            {
+              name: "Rotate an array by K",
+              link: "https://leetcode.com/problems/rotate-array/",
+            },
+            { name: "2 sum", link: "https://leetcode.com/problems/two-sum/" },
+            {
+              name: "Longest subarray with sum",
+              link: "https://www.naukri.com/code360/problems/longest-subarray-with-sum-k_6682399",
+            },
             {
               name: "Find if a given element is in a sorted array (binary search)",
-              link: "#",
+              link: "https://leetcode.com/problems/binary-search/",
             },
           ],
         },
         {
           name: "Medium",
-          badge:
-            "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300",
+          badge: "text-yellow-700 dark:text-yellow-300",
           items: [
-            { name: "Move zeros", link: "#" },
+            {
+              name: "Move zeros",
+              link: "https://leetcode.com/problems/move-zeroes/description/",
+            },
             {
               name: "Best Time to Buy and Sell Stock (Sliding Window)",
-              link: "#",
+              link: "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/",
             },
-            { name: "3 sum", link: "#" },
-            { name: "Next Permutation", link: "#" },
-            { name: "Top K frequent element", link: "#" },
-            { name: "Maximum Subarray", link: "#" },
-            { name: "Container With Most Water", link: "#" },
-            { name: "Find all subsets", link: "#" },
-            { name: "Set Matrix Zero", link: "#" },
+            {
+              name: "3 sum",
+              link: "https://leetcode.com/problems/3sum/description/",
+            },
+            {
+              name: "Next Permutation",
+              link: "https://leetcode.com/problems/next-permutation/description/",
+            },
+            {
+              name: "Top K frequent element",
+              link: "https://leetcode.com/problems/top-k-frequent-elements/description/",
+            },
+            {
+              name: "Maximum Subarray",
+              link: "https://leetcode.com/problems/maximum-subarray/description/",
+            },
+            {
+              name: "Container With Most Water",
+              link: "https://leetcode.com/problems/container-with-most-water/description/",
+            },
+            {
+              name: "Find all subsets",
+              link: "https://leetcode.com/problems/subsets/description/",
+            },
+            {
+              name: "Set Matrix Zero",
+              link: "https://leetcode.com/problems/set-matrix-zeroes/description/",
+            },
           ],
         },
         {
           name: "Hard",
-          badge: "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-300",
+          badge: "text-red-700 dark:text-red-300",
           items: [
-            { name: "Find missing positive", link: "#" },
-            { name: "4 sum", link: "#" },
-            { name: "Best Time to Buy and Sell Stock III", link: "#" },
-            { name: "Reverse pairs", link: "#" },
+            {
+              name: "Find missing positive",
+              link: "https://leetcode.com/problems/first-missing-positive/description/",
+            },
+            {
+              name: "4 sum",
+              link: "https://leetcode.com/problems/4sum/description/",
+            },
+            {
+              name: "Best Time to Buy and Sell Stock III",
+              link: "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/description/",
+            },
+            {
+              name: "Reverse pairs",
+              link: "https://leetcode.com/problems/reverse-pairs/description/",
+            },
           ],
         },
       ],
@@ -339,6 +423,7 @@ const level3 = {
 };
 
 const level4 = {
+  completed: true,
   title: "Level 4: Sorting & Searching",
   id: "sorting_searching",
   icon: "fa-search",
@@ -353,30 +438,29 @@ const level4 = {
         {
           name: "Basic Sorting",
           items: [
-            { name: "Selection Sort", link: "#" },
-            { name: "Bubble Sort", link: "#" },
-            { name: "Insertion Sort", link: "#" },
+            { name: "Selection Sort" },
+            { name: "Bubble Sort" },
+            { name: "Insertion Sort" },
           ],
         },
         {
           name: "Advanced Sorting",
           items: [
-            { name: "Merge Sort (Divide & Conquer)", link: "#" },
-            { name: "Quick Sort", link: "#" },
-            { name: "Heap Sort", link: "#" },
-            { name: "Cycle Sort", link: "#" },
-            { name: "Counting Sort & Radix Sort", link: "#" },
+            { name: "Merge Sort (Divide & Conquer)" },
+            { name: "Quick Sort" },
+            { name: "Heap Sort" },
+            { name: "Cycle Sort" },
+            { name: "Counting Sort & Radix Sort" },
           ],
         },
         {
           name: "Search Fundamentals",
           items: [
-            { name: "Linear Search", link: "#" },
+            { name: "Linear Search" },
             {
               name: "Binary Search (Iterative & Recursive)",
-              link: "#",
             },
-            { name: "Lower Bound & Upper Bound", link: "#" },
+            { name: "Lower Bound & Upper Bound" },
           ],
         },
       ],
@@ -389,54 +473,70 @@ const level4 = {
       groups: [
         {
           name: "Easy (Foundations)",
-          badge:
-            "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300",
+          badge: "text-green-700 dark:text-green-300",
           items: [
-            { name: "Binary Search Implementation", link: "#" },
-            { name: "Implement Lower Bound", link: "#" },
-            { name: "Implement Upper Bound", link: "#" },
-            { name: "Search Insert Position", link: "#" },
-            { name: "Floor and Ceil in Sorted Array", link: "#" },
+            {
+              name: "Binary Search Implementation",
+              link: "https://leetcode.com/problems/binary-search/description/",
+            },
             {
               name: "Find First and Last Position of Element",
-              link: "#",
+              link: "https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/description/",
             },
+            {
+              name: "Peak Index in a Mountain Array",
+              link: "https://leetcode.com/problems/peak-index-in-a-mountain-array/description/",
+            },
+
+            { name: "Implement Lower Bound" },
+            { name: "Implement Upper Bound" },
+            { name: "Search Insert Position" },
+            { name: "Floor and Ceil in Sorted Array" },
           ],
         },
         {
           name: "Medium (Logic Building)",
-          badge:
-            "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300",
+          badge: "text-yellow-700 dark:text-yellow-300",
           items: [
             {
               name: "Search in Rotated Sorted Array I (Unique)",
-              link: "#",
+              link: "https://leetcode.com/problems/search-in-rotated-sorted-array/",
+            },
+            {
+              name: "Find Peak Element",
+              link: "https://leetcode.com/problems/find-peak-element/",
+            },
+            {
+              name: "Divide Two Integers",
+              link: "https://leetcode.com/problems/divide-two-integers/",
+            },
+            {
+              name: "Minimum Number of Days to Make m Bouquets",
+              link: "https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/",
             },
             {
               name: "Search in Rotated Sorted Array II (Duplicates)",
-              link: "#",
             },
-            { name: "Find Minimum in Rotated Sorted Array", link: "#" },
-            { name: "Single Element in a Sorted Array", link: "#" },
-            { name: "Find Peak Element", link: "#" },
-            { name: "Find Nth Root of an Integer", link: "#" },
+            { name: "Find Minimum in Rotated Sorted Array" },
+            { name: "Single Element in a Sorted Array" },
+
+            { name: "Find Nth Root of an Integer" },
           ],
         },
         {
           name: "Hard (BS on Answers)",
-          badge: "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-300",
+          badge: "text-red-700 dark:text-red-300",
           items: [
-            { name: "Koko Eating Bananas", link: "#" },
-            { name: "Minimum days to make M bouquets", link: "#" },
+            { name: "Koko Eating Bananas" },
+            { name: "Minimum days to make M bouquets" },
             {
               name: "Capacity to Ship Packages within D Days",
-              link: "#",
             },
-            { name: "Aggressive Cows", link: "#" },
-            { name: "Book Allocation Problem", link: "#" },
-            { name: "Split Array Largest Sum", link: "#" },
-            { name: "Median of Two Sorted Arrays", link: "#" },
-            { name: "K-th Element of Two Sorted Arrays", link: "#" },
+            { name: "Aggressive Cows" },
+            { name: "Book Allocation Problem" },
+            { name: "Split Array Largest Sum" },
+            { name: "Median of Two Sorted Arrays" },
+            { name: "K-th Element of Two Sorted Arrays" },
           ],
         },
       ],
@@ -445,6 +545,7 @@ const level4 = {
 };
 
 const level5 = {
+  completed: true,
   title: "Level 5: Strings & Sliding Window",
   id: "strings",
   icon: "fa-font",
@@ -459,19 +560,23 @@ const level5 = {
         {
           name: "String Basics",
           items: [
-            { name: "ASCII vs Unicode", link: "#" },
-            { name: "Immutability of Strings", link: "#" },
-            { name: "StringBuilder / StringBuffer", link: "#" },
-            { name: "Rabin-Karp Algorithm (Rolling Hash)", link: "#" },
-            { name: "KMP Algorithm (Pattern Matching)", link: "#" },
+            {
+              name: "Kunal Kushwaha",
+              link: "https://www.youtube.com/watch?v=zL1DPZ0Ovlo",
+            },
+            { name: "ASCII vs Unicode" },
+            { name: "Immutability of Strings" },
+            { name: "StringBuilder / StringBuffer" },
+            { name: "Rabin-Karp Algorithm (Rolling Hash)" },
+            { name: "KMP Algorithm (Pattern Matching)" },
           ],
         },
         {
           name: "Sliding Window Pattern",
           items: [
-            { name: "Fixed Size Window", link: "#" },
-            { name: "Variable Size Window", link: "#" },
-            { name: "Two Pointers Technique", link: "#" },
+            { name: "Fixed Size Window" },
+            { name: "Variable Size Window" },
+            { name: "Two Pointers Technique" },
           ],
         },
       ],
@@ -484,43 +589,35 @@ const level5 = {
       groups: [
         {
           name: "Easy",
-          badge:
-            "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300",
+          badge: "text-green-700 dark:text-green-300",
           items: [
-            { name: "Add Strings", link: "#" },
-            { name: "Reverse words in a String", link: "#" },
-            { name: "Valid Palindrome", link: "#" },
-            { name: "Valid Anagram", link: "#" },
+            {
+              name: "Add Strings",
+              link: "https://leetcode.com/problems/add-strings/description/",
+            },
+            {
+              name: "Reverse words in a String",
+              link: "https://leetcode.com/problems/reverse-words-in-a-string/description/",
+            },
+            {
+              name: "Valid Palindrome",
+              link: "https://leetcode.com/problems/valid-palindrome-ii/description/",
+            },
+            {
+              name: "Valid Anagram",
+              link: "https://leetcode.com/problems/valid-anagram/description/",
+            },
             {
               name: "Find the Index of the First Occurrence",
-              link: "#",
+              link: "http://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/description/",
             },
           ],
         },
         {
-          name: "Medium",
+          name: "Before starting strings medium problems, just learn about Two Pointers and Sliding Window ",
           badge:
-            "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300",
-          items: [
-            {
-              name: "Longest Substring Without Repeating Characters",
-              link: "#",
-            },
-            { name: "Sort Characters By Frequency", link: "#" },
-            { name: "Group Anagrams", link: "#" },
-            { name: "Integer to Roman", link: "#" },
-            { name: "Basic Calculator II", link: "#" },
-          ],
-        },
-        {
-          name: "Hard",
-          badge: "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-300",
-          items: [
-            { name: "Integer to English Words", link: "#" },
-            { name: "Minimum Window Substring", link: "#" },
-            { name: "Distinct Subsequences", link: "#" },
-            { name: "Sliding Window Median", link: "#" },
-          ],
+            "bg-indigo-100 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-300",
+          items: [],
         },
         {
           name: "Sliding Window Specials",
@@ -529,9 +626,61 @@ const level5 = {
           items: [
             {
               name: "Longest Substring with At Least K Repeating",
-              link: "#",
+              link: "https://leetcode.com/problems/longest-substring-with-at-least-k-repeating-characters/description/",
             },
-            { name: "Max Consecutive Ones III", link: "#" },
+            {
+              name: "[Max Consecutive Ones III",
+              link: "https://leetcode.com/problems/max-consecutive-ones-iii/",
+            },
+          ],
+        },
+        {
+          name: "Medium",
+          badge: "text-yellow-700 dark:text-yellow-300",
+          items: [
+            {
+              name: "Longest Substring Without Repeating Characters",
+              link: "https://leetcode.com/problems/longest-substring-without-repeating-characters/description/",
+            },
+            {
+              name: "Sort Characters By Frequency",
+              link: "https://leetcode.com/problems/sort-characters-by-frequency/description/",
+            },
+            {
+              name: "Group Anagrams",
+              link: "https://leetcode.com/problems/sort-characters-by-frequency/description/",
+            },
+            {
+              name: "Integer to Roman",
+              link: "https://leetcode.com/problems/group-anagrams/description/",
+            },
+            {
+              name: "Basic Calculator II",
+              link: "https://leetcode.com/problems/basic-calculator-ii/",
+            },
+          ],
+        },
+
+        {
+          name: "Hard",
+          badge: "text-red-700 dark:text-red-300",
+          items: [
+            {
+              name: "Integer to English Words",
+              link: "https://leetcode.com/problems/integer-to-english-words/description/",
+            },
+            {
+              name: "Minimum Window Substring",
+              link: "https://leetcode.com/problems/minimum-window-substring/description/",
+            },
+            {
+              name: "Distinct Subsequences",
+              link: "https://leetcode.com/problems/distinct-subsequences/description/",
+            },
+            {
+              name: "Sliding Window Median",
+              link: "https://leetcode.com/problems/sliding-window-median/",
+            },
           ],
         },
       ],
@@ -540,6 +689,7 @@ const level5 = {
 };
 
 const level6 = {
+  completed: true,
   title: "Level 6: Stacks",
   id: "stacks",
   icon: "fa-layer-group",
@@ -554,13 +704,12 @@ const level6 = {
         {
           name: "Concepts",
           items: [
-            { name: "LIFO Principle", link: "#" },
+            { name: "LIFO Principle" },
             {
               name: "Implementation using Arrays vs Linked Lists",
-              link: "#",
             },
-            { name: "Monotonic Stack Pattern", link: "#" },
-            { name: "Stack for Recursion Simulation", link: "#" },
+            { name: "Monotonic Stack Pattern" },
+            { name: "Stack for Recursion Simulation" },
           ],
         },
       ],
@@ -573,30 +722,49 @@ const level6 = {
       groups: [
         {
           name: "Easy",
-          badge:
-            "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300",
-          items: [{ name: "Valid Parentheses", link: "#" }],
+          badge: "text-green-700 dark:text-green-300",
+          items: [
+            {
+              name: "Valid Parentheses",
+              link: "https://leetcode.com/problems/valid-parentheses/",
+            },
+          ],
         },
         {
           name: "Medium",
-          badge:
-            "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300",
+          badge: "text-yellow-700 dark:text-yellow-300",
           items: [
-            { name: "Min Stack", link: "#" },
-            { name: "Generate Parentheses", link: "#" },
-            { name: "Car Fleet", link: "#" },
+            {
+              name: "Min Stack",
+              link: "https://leetcode.com/problems/min-stack/",
+            },
+            {
+              name: "Generate Parentheses",
+              link: "https://leetcode.com/problems/generate-parentheses/description/",
+            },
+            {
+              name: "Car Fleet",
+              link: "https://leetcode.com/problems/car-fleet/",
+            },
           ],
         },
         {
           name: "Hard",
-          badge: "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-300",
-          items: [{ name: "Largest Rectangle in Histogram", link: "#" }],
+          badge: "text-red-700 dark:text-red-300",
+          items: [
+            {
+              name: "Largest Rectangle in Histogram",
+              link: "https://leetcode.com/problems/largest-rectangle-in-histogram/",
+            },
+          ],
         },
       ],
     },
   ],
 };
 const level7 = {
+  completed: false,
+
   title: "Level 7: Linked Lists",
   id: "linked_lists",
   icon: "fa-link",
@@ -637,8 +805,7 @@ const level7 = {
       groups: [
         {
           name: "Easy",
-          badge:
-            "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300",
+          badge: "text-green-700 dark:text-green-300",
           items: [
             { name: "Reverse Linked List", link: "#" },
             { name: "Merge Two Sorted Lists", link: "#" },
@@ -649,8 +816,7 @@ const level7 = {
         },
         {
           name: "Medium",
-          badge:
-            "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300",
+          badge: "text-yellow-700 dark:text-yellow-300",
           items: [
             { name: "Linked List Cycle II", link: "#" },
             { name: "Intersection of Two Linked Lists", link: "#" },
@@ -659,7 +825,7 @@ const level7 = {
         },
         {
           name: "Hard",
-          badge: "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-300",
+          badge: "text-red-700 dark:text-red-300",
           items: [
             { name: "Merge k Sorted Lists", link: "#" },
             { name: "Reverse Nodes in k-Group", link: "#" },
@@ -670,6 +836,8 @@ const level7 = {
   ],
 };
 const level8 = {
+  completed: false,
+
   title: "Level 8: Recursion",
   id: "recursion",
   icon: "fa-recycle",
@@ -711,8 +879,7 @@ const level8 = {
       groups: [
         {
           name: "Medium",
-          badge:
-            "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300",
+          badge: "text-yellow-700 dark:text-yellow-300",
           items: [
             { name: "Generate Parentheses", link: "#" },
             { name: "Combination Sum", link: "#" },
@@ -726,6 +893,8 @@ const level8 = {
   ],
 };
 const level9 = {
+  completed: false,
+
   title: "Level 9: Trees & BST",
   id: "trees",
   icon: "fa-tree",
@@ -793,8 +962,7 @@ const level9 = {
       groups: [
         {
           name: "Easy",
-          badge:
-            "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300",
+          badge: "text-green-700 dark:text-green-300",
           items: [
             { name: "Maximum Depth of Binary Tree", link: "#" },
             { name: "Invert Binary Tree", link: "#" },
@@ -805,8 +973,7 @@ const level9 = {
         },
         {
           name: "Medium",
-          badge:
-            "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300",
+          badge: "text-yellow-700 dark:text-yellow-300",
           items: [
             {
               name: "Binary Tree Zigzag Level Order Traversal",
@@ -827,7 +994,7 @@ const level9 = {
         },
         {
           name: "Hard",
-          badge: "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-300",
+          badge: "text-red-700 dark:text-red-300",
           items: [
             { name: "Binary Tree Maximum Path Sum", link: "#" },
             {
@@ -841,6 +1008,8 @@ const level9 = {
   ],
 };
 const level10 = {
+  completed: false,
+
   title: "Level 10: Tries",
   id: "tries",
   icon: "fa-share-alt",
@@ -883,8 +1052,7 @@ const level10 = {
       groups: [
         {
           name: "Standard",
-          badge:
-            "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300",
+          badge: "text-yellow-700 dark:text-yellow-300",
           items: [
             { name: "Implement Trie (Prefix Tree)", link: "#" },
             { name: "Implement Trie II", link: "#" },
@@ -900,6 +1068,8 @@ const level10 = {
   ],
 };
 const level11 = {
+  completed: false,
+
   title: "Level 11: Backtracking",
   id: "backtracking",
   icon: "fa-undo",
@@ -950,8 +1120,7 @@ const level11 = {
       groups: [
         {
           name: "Medium",
-          badge:
-            "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300",
+          badge: "text-yellow-700 dark:text-yellow-300",
           items: [
             { name: "Subsets", link: "#" },
             { name: "Subsets II", link: "#" },
@@ -961,7 +1130,7 @@ const level11 = {
         },
         {
           name: "Hard",
-          badge: "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-300",
+          badge: "text-red-700 dark:text-red-300",
           items: [{ name: "N-Queens", link: "#" }],
         },
       ],
@@ -969,6 +1138,8 @@ const level11 = {
   ],
 };
 const level12 = {
+  completed: false,
+
   title: "Level 12: Heap Priority Queue",
   id: "heaps",
   icon: "fa-server",
@@ -1019,8 +1190,7 @@ const level12 = {
       groups: [
         {
           name: "Easy",
-          badge:
-            "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300",
+          badge: "text-green-700 dark:text-green-300",
           items: [
             { name: "Kth Largest Element in an Array", link: "#" },
             { name: "Last Stone Weight", link: "#" },
@@ -1028,8 +1198,7 @@ const level12 = {
         },
         {
           name: "Medium",
-          badge:
-            "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300",
+          badge: "text-yellow-700 dark:text-yellow-300",
           items: [
             { name: "K Closest Points to Origin", link: "#" },
             { name: "Reorganize String", link: "#" },
@@ -1040,7 +1209,7 @@ const level12 = {
         },
         {
           name: "Hard",
-          badge: "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-300",
+          badge: "text-red-700 dark:text-red-300",
           items: [
             { name: "Design Twitter", link: "#" },
             { name: "Find Median from Data Stream", link: "#" },
@@ -1052,6 +1221,8 @@ const level12 = {
   ],
 };
 const level13 = {
+  completed: false,
+
   title: "Level 13: Graphs",
   id: "graphs",
   icon: "fa-project-diagram",
@@ -1127,6 +1298,8 @@ const level13 = {
   ],
 };
 const level14 = {
+  completed: false,
+
   title: "Level 14: 1-D Dynamic Programming",
   id: "dp_1d",
   icon: "fa-chart-line",
@@ -1167,8 +1340,7 @@ const level14 = {
       groups: [
         {
           name: "Easy",
-          badge:
-            "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300",
+          badge: "text-green-700 dark:text-green-300",
           items: [
             { name: "Climbing Stairs", link: "#" },
             { name: "Min Cost Climbing Stairs", link: "#" },
@@ -1177,8 +1349,7 @@ const level14 = {
         },
         {
           name: "Medium",
-          badge:
-            "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300",
+          badge: "text-yellow-700 dark:text-yellow-300",
           items: [
             { name: "House Robber", link: "#" },
             { name: "House Robber II", link: "#" },
@@ -1194,6 +1365,8 @@ const level14 = {
   ],
 };
 const level15 = {
+  completed: false,
+
   title: "Level 15: 2-D DP & Advanced Graphs",
   id: "dp_2d",
   icon: "fa-th",
@@ -1239,7 +1412,7 @@ const level15 = {
       groups: [
         {
           name: "Hard Problems",
-          badge: "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-300",
+          badge: "text-red-700 dark:text-red-300",
           items: [
             { name: "Min Cost to Connect All Points", link: "#" },
             { name: "Swim in Rising Water", link: "#" },
