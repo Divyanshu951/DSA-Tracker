@@ -34,6 +34,7 @@
       type="image/jpeg"
       href="https://professor.global/assets/dsa-icon-C_k_sH1x.png"
     />
+
     <style>
       body {
         font-family: "Inter", sans-serif;
@@ -106,6 +107,10 @@
               <h1 class="text-2xl font-bold tracking-tight">
                 DSA
                 <span class="text-indigo-600 dark:text-indigo-500">Map</span>
+                <span
+                  id="last-updated"
+                  class="fixed bottom-2 left-2 text-xs font-mono text-[#04913e]"
+                ></span>
               </h1>
               <div class="flex items-center gap-2">
                 <span
@@ -113,6 +118,14 @@
                   class="text-xs px-2 py-0.5 rounded-full border dark:border-gray-800 bg-gray-100 dark:bg-gray-900 text-gray-500"
                   >Connecting...</span
                 >
+                <a
+                  href="https://whimsical.com/dsa-syllabus-codeandebug-2ERY7B6qco2zg5LdawHsLE"
+                  target="_blank"
+                  ><img
+                    src="https://luna1.co/7c9d33.png"
+                    class="flex h-4 inline-block"
+                  />
+                </a>
               </div>
             </div>
             <button
@@ -127,7 +140,7 @@
           <div class="flex items-center gap-4 w-full md:w-auto">
             <button
               onclick="window.resetProgress()"
-              class="text-xs font-medium text-red-500 hover:bg-red-50 dark:hover:bg-red-900/10 px-3 py-2 rounded transition border border-transparent hover:border-red-200 dark:hover:border-red-900/30"
+              class="text-xs font-medium text-red-500 hover:bg-red-50 dark:hover:bg-red-900/10 px-3 py-2 rounded transition border border-transparent hover:border-red-200 dark:hover:border-red-900/30 opacity-10"
             >
               <i class="fas fa-undo"></i>
             </button>
@@ -141,26 +154,29 @@
             </button>
 
             <div
-              id="progress-stats"
-              class="rounded-lg p-3 border border-gray-200 dark:border-dark-border text-xs text-right mt-1 text-gray-900 dark:text-gray-400"
-            ></div>
-
-            <div
-              class="bg-gray-100 dark:bg-[#151515] rounded-lg p-3 w-full md:w-64 border border-gray-200 dark:border-dark-border"
+              class="flex justify-between bg-gray-100 dark:bg-[#151515] rounded-lg dark:text-gray-400 mb-1"
             >
-              <div
-                class="flex justify-between text-xs font-semibold text-gray-500 dark:text-gray-400 mb-1"
-              >
-                <span>Total Journey</span>
-                <span id="global-percent">0%</span>
-              </div>
-              <div class="w-full bg-gray-300 dark:bg-gray-800 rounded-full h-2">
+              <div class="p-3 w-full md:w-64 dark:border-dark-border">
                 <div
-                  id="global-progress-bar"
-                  class="bg-indigo-600 dark:bg-indigo-500 h-2 rounded-full transition-all duration-500"
-                  style="width: 0%"
-                ></div>
+                  class="flex justify-between text-xs font-semibold text-gray-500"
+                >
+                  <span>Total Journey</span>
+                  <span id="global-percent">0%</span>
+                </div>
+                <div
+                  class="w-full bg-gray-300 dark:bg-gray-800 rounded-full h-2"
+                >
+                  <div
+                    id="global-progress-bar"
+                    class="bg-indigo-600 dark:bg-indigo-500 h-2 rounded-full transition-all duration-500"
+                    style="width: 0%"
+                  ></div>
+                </div>
               </div>
+              <div
+                id="progress-stats"
+                class="flex items-center justify-start py-3 pr-3 pl-0 text-xs text-gray-900 dark:text-gray-400 font-semibold"
+              ></div>
             </div>
           </div>
         </div>
@@ -169,9 +185,6 @@
 
     <main class="flex-grow max-w-6xl mx-auto px-4 py-8 w-full">
       <div id="dashboard-view" class="fade-in">
-        <h2 class="text-xl font-bold mb-6 text-gray-800 dark:text-white">
-          Select a Level
-        </h2>
         <div
           id="dashboard-grid"
           class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
@@ -285,7 +298,22 @@
               const data = snapshot.val();
               const items = data.completed || [];
               completedItems = new Set(items);
-              statusEl.textContent = "Online";
+              statusEl.textContent = `Online`;
+
+              document.getElementById(
+                "last-updated"
+              ).textContent = `Last Updated: ${new Date(
+                data.lastUpdated
+              ).toLocaleString("en-IN", {
+                timeZone: "Asia/Kolkata",
+                day: "2-digit",
+                month: "short",
+                year: "numeric",
+                hour: "2-digit",
+                minute: "2-digit",
+                hour12: true,
+              })}`;
+
               statusEl.className =
                 "text-xs px-2 py-0.5 rounded-full border bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 border-green-200 dark:border-green-800";
             } else {
@@ -325,6 +353,8 @@
               // Restore online status style
               statusEl.textContent = "Online";
             }, 1000);
+
+            updateLastUpdated();
           })
           .catch((error) => {
             console.error("Save failed:", error);
@@ -332,6 +362,31 @@
           });
 
         updateAllProgress();
+      }
+
+      function updateLastUpdated() {
+        get(dbRef)
+          .then((snapshot) => {
+            if (snapshot.exists()) {
+              const data2 = snapshot.val();
+              document.getElementById(
+                "last-updated"
+              ).textContent = `Last Updated: ${new Date(
+                data2.lastUpdated
+              ).toLocaleString("en-IN", {
+                timeZone: "Asia/Kolkata",
+                day: "2-digit",
+                month: "short",
+                year: "numeric",
+                hour: "2-digit",
+                minute: "2-digit",
+                hour12: true,
+              })}`;
+            }
+          })
+          .catch((error) => {
+            console.error("Firebase Error:", error);
+          });
       }
 
       // --- CALCULATIONS ---
@@ -417,33 +472,36 @@
           card.onclick = () => window.openLevel(index);
 
           card.innerHTML = `
-                <div class="flex items-start justify-between mb-4">
-                    <div class="p-3 rounded-lg bg-gray-50 dark:bg-[#151515] ${
-                      section.color
-                    } group-hover:scale-110 transition-transform duration-300">
-                        <i class="fas ${section.icon} text-xl"></i>
-                    </div>
-                    <span class="text-xs font-mono text-gray-400 dark:text-gray-600">#${
-                      index + 1
-                    }</span>
-                </div>
-                <h3 class="font-bold text-lg text-gray-800 dark:text-gray-200 mb-1 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">${
-                  section.title
-                }</h3>
-                <div class="mt-4">
-                    <div class="flex justify-between text-xs text-gray-500 dark:text-gray-500 mb-1">
-                        <span>Progress</span>
-                        <span id="dash-text-${index}">${stats.completed}/${
+                  <div class="flex items-start justify-between mb-4">
+                      <div class="p-3 rounded-lg bg-gray-50 dark:bg-[#151515] ${
+                        section.color
+                      } group-hover:scale-110 transition-transform duration-300">
+                          <i class="fas ${section.icon} text-xl"></i>
+                      </div>
+                      <span class="text-xs font-mono ${
+                        section.completed
+                          ? `text-[#04913e]
+`
+                          : `text-gray-400`
+                      }">#${index + 1}</span>
+                  </div>
+                  <h3 class="font-bold text-lg text-gray-800 dark:text-gray-200 mb-1 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">${
+                    section.title
+                  }</h3>
+                  <div class="mt-4">
+                      <div class="flex justify-between text-xs text-gray-500 dark:text-gray-500 mb-1">
+                          <span>Progress</span>
+                          <span id="dash-text-${index}">${stats.completed}/${
             stats.total
           } Done</span>
-                    </div>
-                    <div class="w-full bg-gray-100 dark:bg-[#1a1a1a] rounded-full h-1.5">
-                        <div id="dash-bar-${index}" class="bg-indigo-500 dark:bg-indigo-600 h-1.5 rounded-full transition-all duration-500" style="width: ${
+                      </div>
+                      <div class="w-full bg-gray-100 dark:bg-[#1a1a1a] rounded-full h-1.5">
+                          <div id="dash-bar-${index}" class="bg-indigo-500 dark:bg-indigo-600 h-1.5 rounded-full transition-all duration-500" style="width: ${
             stats.percent
           }%"></div>
-                    </div>
-                </div>
-            `;
+                      </div>
+                  </div>
+              `;
           grid.appendChild(card);
         });
       }
@@ -471,13 +529,13 @@
 
             // Column Header
             colDiv.innerHTML = `
-                 <div class="flex items-center gap-3 mb-2 pb-2 border-b border-gray-200 dark:border-dark-border">
-                    <div class="${col.bgColor} ${col.color} p-2 rounded-md">
-                        <i class="fas ${col.icon}"></i>
-                    </div>
-                    <h3 class="font-bold text-gray-700 dark:text-gray-200">${col.title}</h3>
-                 </div>
-              `;
+                   <div class="flex items-center gap-3 mb-2 pb-2 border-b border-gray-200 dark:border-dark-border">
+                      <div class="${col.bgColor} ${col.color} p-2 rounded-md">
+                          <i class="fas ${col.icon}"></i>
+                      </div>
+                      <h3 class="font-bold text-gray-700 dark:text-gray-200">${col.title}</h3>
+                   </div>
+                `;
 
             col.groups.forEach((group, groupIdx) => {
               const uniqueGroupId = `${section.id}-${colIdx}-${groupIdx}`;
@@ -493,24 +551,17 @@
               header.onclick = () => window.toggleAccordion(uniqueGroupId);
 
               header.innerHTML = `
-                    <div class="flex items-center gap-2">
-                        <span class="font-medium text-sm text-gray-800 dark:text-gray-200">${
-                          group.name
-                        }</span>
-                        ${
-                          group.badge
-                            ? `<span class="text-[10px] px-2 py-0.5 rounded-full font-bold ${group.badge} uppercase tracking-wider opacity-90">Set</span>`
-                            : ""
-                        }
-                    </div>
-                    <i class="fas fa-chevron-right text-xs text-gray-400 transition-transform duration-200" id="arrow-${uniqueGroupId}"></i>
-                 `;
+                      <div class="flex items-center gap-2">
+                          <span class="font-medium text-sm text-gray-800 dark:text-gray-200 ${group.badge}">${group.name}</span>
+                      </div>
+                      <i class="fas fa-chevron-right text-xs text-gray-400 transition-transform duration-200" id="arrow-${uniqueGroupId}"></i>
+                   `;
 
               // Group Content
               const content = document.createElement("div");
               content.id = `content-${uniqueGroupId}`;
               content.className =
-                "accordion-content bg-gray-50 dark:bg-[#0c0c0c]";
+                "accordion-content bg-gray-100 dark:bg-[#151515]";
 
               const inner = document.createElement("div");
               inner.className = "accordion-inner p-2 space-y-1";
@@ -521,30 +572,39 @@
 
                 const row = document.createElement("div");
                 row.className =
-                  "flex items-start p-2 hover:bg-white dark:hover:bg-dark-card rounded transition group/item";
+                  "flex items-start p-2 hover:bg-white dark:hover:bg-[#151515] rounded transition group/item";
 
                 row.innerHTML = `
-                        <label class="checkbox-wrapper flex items-start cursor-pointer pt-0.5">
-                            <input type="checkbox" class="sr-only" onchange="window.toggleItem('${itemId}')" ${
+                          <label class="checkbox-wrapper flex items-start cursor-pointer pt-0.5">
+                              <input type="checkbox" class="sr-only" onchange="window.toggleItem('${itemId}')" ${
                   isChecked ? "checked" : ""
                 }>
-                            <div class="w-4 h-4 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-[#151515] flex items-center justify-center transition hover:border-indigo-400 dark:hover:border-indigo-400">
-                                <svg class="w-2.5 h-2.5 text-white hidden pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M5 13l4 4L19 7"></path></svg>
-                            </div>
-                        </label>
-                        <div class="ml-3 flex-grow min-w-0">
-                             <div class="text-sm text-gray-700 dark:text-gray-300 ${
-                               isChecked
-                                 ? "line-through text-gray-400 dark:text-gray-600"
-                                 : ""
-                             }" id="text-${itemId}">${item.name}</div>
-                        </div>
-                        ${
-                          item.link
-                            ? `<a href="${item.link}" target="_blank" class="ml-2 text-indigo-500 dark:text-indigo-400 opacity-0 group-hover/item:opacity-100 transition"><i class="fas fa-external-link-alt text-xs"></i></a>`
-                            : ""
-                        }
-                    `;
+                              <div class="w-4 h-4 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-[#151515] flex items-center justify-center transition hover:border-indigo-400 dark:hover:border-indigo-400">
+                                  <svg class="w-2.5 h-2.5 text-white hidden pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M5 13l4 4L19 7"></path></svg>
+                              </div>
+                          </label>
+                          <div class="ml-3 flex-grow min-w-0">
+                               <div class="text-sm text-gray-700 dark:text-gray-300 ${
+                                 isChecked
+                                   ? "line-through text-gray-400 dark:text-gray-600"
+                                   : ""
+                               }" id="text-${itemId}">
+                               ${
+                                 item.link && item.link !== "#"
+                                   ? `<a href="${item.link}" target="_blank">${item.name}</a>`
+                                   : item.name
+                               }
+
+                               </div>
+                          </div>
+                          ${
+                            item.link
+                              ? item.link === "#"
+                                ? `<p class="ml-2 opacity-50"><i class="fas fa-external-link-alt text-red-500 text-xs"></i></p>`
+                                : `<a href="${item.link}" class="ml-2 text-indigo-500 dark:text-indigo-400 opacity-50"><i class="fas fa-external-link-alt text-xs"></i></a>`
+                              : `<p class="ml-2 text-indigo-500 dark:text-indigo-400 opacity-50"><i class="fas fa-ban text-red-500"></i></p>`
+                          }
+                      `;
                 inner.appendChild(row);
               });
 
